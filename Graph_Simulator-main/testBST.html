@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.0/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Binary Tree Visualization</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Binary Tree Visualization</a>
+          <a class="navbar-brand" href="index.html">HOME</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Choose Algorithm</a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="testBST.html">Binary Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testAVL.html">AVL Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testRBT.html">Red-Black Tree Visualization</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="testGraphs.html">Graphs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+      
+    
+    <svg xmlns="http://www.w3.org/2000/svg" id="svg" class="svg" shape-rendering="auto"></svg>
+    <div class="container-fluid sidebar">
+        
+        <div class="row-offcanvas row-offcanvas-left">
+            
+            <div class="sidebar-offcanvas" id="sidebar">
+                
+                <div class="list-group">
+            
+                    <div class="list-group-item">
+                        <form class="form-inline" id="addNodeForm" role="form">
+                            <div class="form-group">
+                                <label for="addNode">Add node: </label>
+                                <input type="number" class="form-control" id="addNode">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    
+                    <div class="list-group-item">
+                        <form class="form-inline" id="searchForNodeForm" role="form">
+                            <div class="form-group">
+                                <label for="searchForNode">Search node: </label>
+                                <input type="number" class="form-control" id="searchForNode">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    
+                    <div class="list-group-item">
+                        <form class="form-inline" id="deleteNodeForm" role="form">
+                            <div class="form-group">
+                                <label for="deleteNode">Delete node: </label>
+                                <input type="number" class="form-control" id="deleteNode">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    
+                    <div class="list-group-item">
+                        <form class="form-inline" id="addRandomForm" role="form">
+                            <div class="form-group">
+                                <label for="addRandom"># of random nodes to add: </label>
+                                <input type="number" class="form-control" id="addRandom" data-toggle="popover" data-trigger="hover" 
+                                    data-content="Random nodes between 0 and 500 will be added.">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    
+                    <div class="list-group-item">
+                        <form class="form-inline" id="animationSpeedForm" role="form">
+                            <div class="form-group">
+                                <label for="AnimationSpeed">Slow</label>
+                                <input type="range" id="animationSpeed" data-silder-id="animationSpeedSlider" data-slider-min="0.1" data-slider-max="5.1" data-slider-step="0.1" data-slider-value="1"/>
+                                <label for="AnimationSpeed">Fast</label>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="list-group-item">
+                        <form class="form-inline" id="resetZoom" role="form">
+                            <button type="submit" class="btn btn-default" onclick="resetPage()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-primary btn-xs btn-toggle" data-toggle="offcanvas">
+            <img class="toggle-icon" src="./images/toggle.png"></button>
+            
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="bstvisual.js"></script>
+    <script>
+        //Refresh the page, clear the tree
+        function resetPage() {
+            location.reload();
+        }
+        
+        $(document).ready(function () {
+            $('[data-toggle=offcanvas]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+            });
+            $('#addRandom').popover({placement:'bottom'});
+        });
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

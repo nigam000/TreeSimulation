@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="graphscss/main.css">
+    <title>Graphs</title>
+</head>
+<body>
+    <div class="container-xxl">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid text-dark">
+          <a class="navbar-brand text-black" href="#">Deapth-First Search</a>
+          <a class="navbar-brand text-black" href="index.html">HOME</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Choose Algorithm</a>
+                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="testBST.html">Binary Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testAVL.html">AVL Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testRBT.html">Red-Black Tree Visualization</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="testGraph.html">Graphs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+        <canvas id="myCanvas" style="border:1px solid #000000;"></canvas>
+        <div id="display-panel">
+            <div id="top">
+                <h1>
+                    Operations
+                </h1>
+                <h1>Mode: <span id="mode-name">Pointer</span> </h1>
+            </div>
+            <div id="operations">
+            </div>
+        </div>
+    </div>
+    <div id="controls">
+        <h2>Controls</h2>
+        <div class="left">
+            <button id="vertexButton" data-clicked="false">Add Vertex</button>
+            <button id="edgeButton" data-clicked="false">Add Edge</button>
+            <button id="bfsButton">BFS</button>
+            <button id="dfsButton">DFS</button>
+
+            <button id="clear">Clear Nodes</button>
+            <button id="clearCanvas">Clear Canvas</button>
+        </div>
+        <div class="right">
+            <form>
+                <label><b>Starting Node</b></label>
+                <input type="text" name="message" id="start-node">
+                <label><b>Ending Node</b></label>
+                <input type="text" name="message" id="end-node">
+            </form>
+            <button id="bestFirstSearchButton">Best First Search</button>
+            <button id="aStarButton">A* Search</button>
+        </div>
+    </div>
+    <script type="module" src="graphsjs/draw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

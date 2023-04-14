@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Tree Traversal Visualization</title>
+</head>
+<body>
+    <div class="container-xxl">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid text-dark">
+          <a class="navbar-brand text-black" href="#">Tree Traversal Visualization</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Choose Algorithm</a>
+                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="testBST.html">Binary Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testAVL.html">AVL Tree Visualization</a></li>
+                    <li><a class="dropdown-item" href="testRBT.html">Red-Black Tree Visualization</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="testGraphs.html">Graphs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <style>
+        
+        .carousel-item {
+            height:36rem;
+            background:rgb(54, 54, 54);
+            color:white;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            padding-top: 20px;
+            padding-left: 120px;
+            padding-right: 120px;
+            padding-bottom: 20px;
+        }
+        
+    </style>
+    <div class="container-fluid p-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.howitworksdaily.com/wp-content/uploads/2018/08/cropped-HowItWorks_logo-White-2.png" class="d-block justify-content-center w-100 h-100" alt="https://www.howitworksdaily.com/wp-content/uploads/2018/08/cropped-HowItWorks_logo-White-2.png">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/Homepage.png" class="img-fluid w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/ca2.png" class="img-fluid w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/BSTpage.png" class="img-fluid w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/Graphpage.png" class="img-fluid w-100 h-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+        <div class="container-fluid p-5 bg-light">
+          <h1>Binary Search tree</h1>
+          <p>In this article, we will discuss the Binary search tree.</p>
+          <p>Before moving directly to the binary search tree, let's first see a brief description of the tree.</p>
+          <h3>What is a tree?</h3>
+          <p>A tree is a kind of data structure that is used to represent the data in hierarchical form. It can be defined as a collection of objects or entities called as nodes that are linked together to simulate a hierarchy. Tree is a non-linear data structure as the data in a tree is not stored linearly or sequentially.</p>
+          <h3>What is a Binary Search Tree?</h3>
+          <p>A binary search tree follows some order to arrange the elements. In a Binary search tree, the value of left node must be smaller than the parent node, and the value of right node must be greater than the parent node. This rule is applied recursively to the left and right subtrees of the root.</p>
+          <p>Let's understand the concept of Binary search tree with an example.</p>
+          <img src="./images/BSt.png" class="img-fluid" alt="...">
+          <p>In the above figure, we can observe that the root node is 27, and all the nodes of the left subtree are smaller than the root node, and all the nodes of the right subtree are greater than the root node.</p>
+          <p>Similarly, we can see the left child of root node is greater than its left child and smaller than its right child. So, it also satisfies the property of binary search tree. Therefore, we can say that the tree in the above image is a binary search tree.</p>
+          <p></p>  
+        </div>
+        <div class="container-fluid p-5 bg-light">
+          <h1>AVL Tree</h1>
+          <p>AVL Tree is invented by GM Adelson - Velsky and EM Landis in 1962. The tree is named AVL in honour of its inventors.</p>
+          <p>AVL Tree can be defined as height balanced binary search tree in which each node is associated with a balance factor which is calculated by subtracting the height of its right sub-tree from that of its left sub-tree.</p>
+          <p>Tree is said to be balanced if balance factor of each node is in between -1 to 1, otherwise, the tree will be unbalanced and need to be balanced.</p>
+          <h3>Balance Factor (k) = height (left(k)) - height (right(k))</h3>
+          <p>If balance factor of any node is 1, it means that the left sub-tree is one level higher than the right sub-tree.</p>
+          <p>If balance factor of any node is 0, it means that the left sub-tree and right sub-tree contain equal height.</p>
+          <p>If balance factor of any node is -1, it means that the left sub-tree is one level lower than the right sub-tree.</p>
+          <p>An AVL tree is given in the following figure. We can see that, balance factor associated with each node is in between -1 and +1. therefore, it is an example of AVL tree.</p>
+          <img src="./images/Avl.png" class="img-fluid" alt="...">
+          <h3>Complexity</h3>
+          <img src="./images/complexity.png" class="img-fluid" alt="...">
+          <h3>Operations on AVL Tree</h3>
+          <img src="./images/opr.png" class="img-fluid" alt="...">
+          <h3>AVL Rotations</h3>
+          <p>We perform rotation in AVL tree only in case if Balance Factor is other than -1, 0, and 1. There are basically four types of rotations which are as follows:</p>
+          <p>   1. L L rotation: Inserted node is in the left subtree of left subtree of A</p>
+          <p>   2. R R rotation : Inserted node is in the right subtree of right subtree of A</p>
+          <p>   3. L R rotation : Inserted node is in the right subtree of left subtree of A</p>
+          <p>   4. R L rotation : Inserted node is in the left subtree of right subtree of A</p>
+          <p>Where node A is the node whose balance Factor is other than -1, 0, 1.</p>
+          <p>The first two rotations LL and RR are single rotations and the next two rotations LR and RL are double rotations. For a tree to be unbalanced, minimum height must be at least 2, Let us understand each rotation</p>
+        </div>
+        <div class="container-fluid p-5 bg-light">
+          <h1>Red-Black Tree</h1>
+          <p>Red black tree is a self-balancing binary tree where each node has an extra bit and that bit is often interpreted as color red or black. The colors ensure that the tree remains balanced during both deletions and insertions. </p>
+          <p>The average searching time of red-black tree is O(log n), where n is total number of elements in the tree.</p>
+          <h3>Red-black tree follows a set of rules which are:-</h3>
+          <p>•	Every node has either red or black color.</p>
+          <p>•	The root of the tree is always black.</p>
+          <p>•	Newly inserted nodes are of red color.</p>
+          <p>•	There are no two adjacent red nodes.</p>
+          <p>•	Every path from node to its descendent NULL nodes has same number of black nodes.</p>
+          <p>•	Null pointers are also considered black nodes.</p>
+          <p>•	To balance an unbalanced red-black tree, we have to either re-color, use rotation or do both.</p>
+          <p>A red-black tree is preferred when the application requires frequent insertions and deletions, as it causes less rotations in insertion and deletion as compared to other trees.</p>
+          <img src="./images/rbt.png" class="img-fluid" alt="...">
+        </div>
+        <div class="container-fluid p-5 bg-light">
+          <h1>Graphs in Data Structures</h1>
+          <p>A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,</p>
+          <p>A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.</p>
+          <img src="https://www.geeksforgeeks.org/wp-content/uploads/undirectedgraph.png" class="img-fluid" alt="https://www.geeksforgeeks.org/wp-content/uploads/undirectedgraph.png">
+          <p>In the above Graph, the set of vertices V = {0,1,2,3,4} and the set of edges E = {01, 12, 23, 34, 04, 14, 13}.</p>
+          <p>Graphs are used to solve many real-life problems. Graphs are used to represent networks. The networks may include paths in a city or telephone network or circuit network. Graphs are also used in social networks like linkedIn, Facebook. For example, in Facebook, each person is represented with a vertex(or node). Each node is a structure and contains information like person id, name, gender, locale etc.</p>
+          <h3>Breadth First Search or BFS for a Graph</h3>
+          <p>Breadth-First Traversal (or Search) for a graph is similar to Breadth-First Traversal of a tree (See method 2 of this post). The only catch here is, unlike trees, graphs may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array. For simplicity, it is assumed that all vertices are reachable from the starting vertex. </p>
+          <p>For example, in the following graph, we start traversal from vertex 2. When we come to vertex 0, we look for all adjacent vertices of it. 2 is also an adjacent vertex of 0. If we don’t mark visited vertices, then 2 will be processed again and it will become a non-terminating process. A Breadth-First Traversal of the following graph is 2, 0, 3, 1.</p>
+          <img src="./images/g3.png" class="img-fluid" alt="...">
+          <h3>Depth First Search or DFS for a Graph</h3>
+          <p>Depth First Traversal (or Search) for a graph is similar to Depth First Traversal of a tree. The only catch here is, unlike trees, graphs may contain cycles (a node may be visited twice). To avoid processing a node more than once, use a boolean visited array. </p>
+          <h5>Approach:</h5>
+          <p>Depth-first search is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking. So the basic idea is to start from the root or any arbitrary node and mark the node and move to the adjacent unmarked node and continue this loop until there is no unmarked adjacent node. Then backtrack and check for other unmarked nodes and traverse them. Finally, print the nodes in the path.</p>
+          <h5>Algorithm: </h5>
+          <p>Create a recursive function that takes the index of the node and a visited array.</p>
+          <p>1. Mark the current node as visited and print the node.</p>
+          <p>2. Traverse all the adjacent and unmarked nodes and call the recursive function with the index of the adjacent node.</p>
+          <h5>Example:</h5>
+          <img src="./images/g1.png" class="img-fluid" alt="...">
+          <img src="./images/g2.png" class="img-fluid" alt="...">
+        </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

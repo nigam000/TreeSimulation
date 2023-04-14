@@ -1,0 +1,40 @@
+.field {
+    width: 100%;
+}
+
+.message {
+    height: 20px;
+    padding: 5px 20px;
+    color: red;
+}
+
+form {
+    display: inline-block;
+}
+
+.node {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding-top: 12px;
+    text-align: center;
+    z-index: 10;
+}
+
+.row {
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.root {
+    justify-content: center;
+}
+
+canvas {
+    position: absolute;
+}
